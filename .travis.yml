@@ -11,14 +11,14 @@ script:
   - docker run -e CI=true canozunal/react-test npm test
 
 after_success:
-  - docker build -t canozunal/multi-client ./client
-  - docker build -t canozunal/multi-nginx ./nginx
-  - docker build -t canozunal/multi-server ./server
-  - docker build -t canozunal/multi-worker ./worker
+  - docker build -t canozunal/multi-client2 ./client
+  - docker build -t canozunal/multi-nginx2 ./nginx
+  - docker build -t canozunal/multi-server2 ./server
+  - docker build -t canozunal/multi-worker2 ./worker
   # Log in to the docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # Take those images and push them to docker hub
-  - docker push canozunal/multi-client
-  - docker push canozunal/multi-nginx
-  - docker push canozunal/multi-server
-  - docker push canozunal/multi-worker
+  - docker push canozunal/multi-client2
+  - docker push canozunal/multi-nginx2
+  - docker push canozunal/multi-server2
+  - docker push canozunal/multi-worker2

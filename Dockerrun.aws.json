@@ -3,7 +3,25 @@
     "containerDefinitions": [
         {
             "name": "client",
-            "image": "canozunal/multi-client2"
+            "image": "canozunal/multi-client2",
+            "hostname": "client",
+            "essential": false
+        },
+        {
+            "name": "server",
+            "image": "canozunal/multi-server2",
+            "hostname": "api",
+            "essential": false
+        },
+        {
+            "name": "worker",
+            "image": "canozunal/multi-worker2",
+            "hostname": "worker",
+            "essential": false
+        },
+        {
+            "name": "nginx",
+            "image": "canozunal/multi-nginx"
         }
     ]
 }
